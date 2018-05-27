@@ -70,8 +70,7 @@ void AgvCommunication::delayConnect2()
     udpSocket = new QUdpSocket(this);
     bool bind = udpSocket->bind(hostIp, agvPort);
 
-    //bool bind = udpSocket->bind(QHostAddress("192.168.31.254"), 8080);
-    //if(udpSocket->bind(hostPort, QUdpSocket::ShareAddress | QUdpSocket::ReuseAddressHint))//建立socket连接
+
 
     if( bind )
     {
@@ -88,7 +87,7 @@ void AgvCommunication::delayConnect2()
     }
     connect(udpSocket,&QUdpSocket::readyRead,this,&AgvCommunication::slotReadyReadDatagrams);
 
-    /*@by chen*/
+
     /*开启定时器，判断socket是否处于在线状态*/
     QTimer *timer=new QTimer(this);
     connect(timer,SIGNAL(timeout()),this,SLOT(timerUpDate()));
