@@ -16,7 +16,7 @@ AgvCommunication::AgvCommunication()
 
     QTimer::singleShot(2000, this, SLOT(delayConnect2()));//2000ms后执行函数delayConnect2()函数，防止界面未完全启动时，socket已启动
 
-   //connect(udpSocket,&QUdpSocket::readyRead,this,&AgvCommunication::slotReadyReadDatagrams);
+
 }
 
 AgvCommunication::~AgvCommunication()
