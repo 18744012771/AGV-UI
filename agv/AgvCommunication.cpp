@@ -9,11 +9,7 @@ AgvCommunication::AgvCommunication()
     hostPort = config.getHostPort();
     agvPort = config.getAgvPort();
     stationPort = config.getStationPort();//8081
-//    qDebug()<<QStringLiteral("主机监听端口：")<<hostPort<<QStringLiteral("agv监听端口:")<<agvPort<<QStringLiteral("工位监听端口：")<<stationPort;
     hostIp.setAddress (QString(config.getHostIp ()));
-
-    /*udpSocket->bind(hostIp,hostPort, QUdpSocket::ShareAddress | QUdpSocket::ReuseAddressHint);//建立socket连接*/
-
     QTimer::singleShot(2000, this, SLOT(delayConnect2()));//2000ms后执行函数delayConnect2()函数，防止界面未完全启动时，socket已启动
 
 
